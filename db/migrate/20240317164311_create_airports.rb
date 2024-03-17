@@ -3,6 +3,7 @@ class CreateAirports < ActiveRecord::Migration[7.1]
     create_table :airports do |t|
       t.string :code
       t.string :name
+      t.string :city
 
       t.timestamps
     end
