@@ -10,31 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_17_201600) do
+ActiveRecord::Schema[7.1].define(version: 20_240_317_205_434) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "airports", force: :cascade do |t|
-    t.string "code"
-    t.string "name"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'airports', force: :cascade do |t|
+    t.string 'code'
+    t.string 'name'
+    t.string 'city'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "flights", force: :cascade do |t|
-    t.time "depart_time"
-    t.date "depart_date"
-    t.time "arrival_time"
-    t.date "arrival_date"
-    t.bigint "departure_airport_id", null: false
-    t.bigint "arrival_airport_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["arrival_airport_id"], name: "index_flights_on_arrival_airport_id"
-    t.index ["departure_airport_id"], name: "index_flights_on_departure_airport_id"
+  create_table 'flights', force: :cascade do |t|
+    t.time 'depart_time'
+    t.date 'depart_date'
+    t.time 'arrival_time'
+    t.date 'arrival_date'
+    t.bigint 'departure_airport_id', null: false
+    t.bigint 'arrival_airport_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'duration'
+    t.index ['arrival_airport_id'], name: 'index_flights_on_arrival_airport_id'
+    t.index ['departure_airport_id'], name: 'index_flights_on_departure_airport_id'
   end
 
-  add_foreign_key "flights", "airports", column: "arrival_airport_id"
-  add_foreign_key "flights", "airports", column: "departure_airport_id"
+  add_foreign_key 'flights', 'airports', column: 'arrival_airport_id'
+  add_foreign_key 'flights', 'airports', column: 'departure_airport_id'
 end
