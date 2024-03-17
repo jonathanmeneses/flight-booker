@@ -8,17 +8,17 @@
 - [ ] Create a one-way flight booker application.
 
 ### Setup
-- [ ] Think through the data architecture.
+- [X] Think through the data architecture.
 - [X] Create a new Rails app and a new Git repo.
 - [X] Modify the README to explain the project.
 
 ### Screen 1: Search
-- [ ] Create an Airport model with an airport code.
-- [ ] Use db/seeds.rb to create several airports.
-- [ ] Create a Flight model with departure and arrival airport IDs, start datetime, and flight duration.
-- [ ] Set up associations for Flight and Airport models.
-- [ ] Seed your database with flights.
-- [ ] Set up FlightsController and routes, making the Index page (/flights) the root route.
+- [X] Create an Airport model with an airport code.
+- [X] Use db/seeds.rb to create several airports.
+- [X] Create a Flight model with departure and arrival airport IDs, start datetime, and flight duration.
+- [X] Set up associations for Flight and Airport models.
+- [X] Seed your database with flights.
+- [X] Set up FlightsController and routes, making the Index page (/flights) the root route.
 - [ ] Create a search form on the /flights index page to submit using a GET request.
 - [ ] Add dropdown menus for departure airports, arrival airports, number of passengers, and flight date.
 
@@ -60,7 +60,7 @@
 * Depart Time
 * Arrival Time
 * Date
-* Dp Airport
+* Departure Airport
 * Destination Airport
 
 #### Associations
