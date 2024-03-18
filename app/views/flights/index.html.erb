@@ -10,7 +10,7 @@
   <%= form.select :flight_date, options_for_select(@flight_dates, params[:flight_date]), {}, { class: "custom-select" } %>
   <%= form.submit "Search for flights", class: "btn btn-primary" %>
 <% end %>
-<%= form_with url: "/", method: :get do%>
+<%= form_with new_bookings_path, do%>
   <% @searched_flights.each do |f| %>
     <%= render "flight_option", flight:f %>
   <% end %>

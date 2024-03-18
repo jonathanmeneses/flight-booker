@@ -1,4 +1,5 @@
 class FlightsController < ApplicationController
+  include ApplicationHelper
   def index
     @airport_options = Airport.all.map { |a| [a.code, a.id] }
     @flight_dates = Flight.distinct.order(arrival_date: :asc).pluck(:arrival_date).map do |d|
