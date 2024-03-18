@@ -1,1 +1,19 @@
-<h1>Hello, World</h1>
+<h1>Search for Flights</h1>
+<%= form_with url: flights_path, method: :get, local: true do |form| %>
+  <%= form.label :departure_id, "Departing Airport:" %>
+  <%= form.select :departure_id, options_for_select(@airport_options, params[:departure_id]), {}, { class: "custom-select" } %>
+  <%= form.label :arrival_id, "Arriving Airport:" %>
+  <%= form.select :arrival_id, options_for_select(@airport_options, params[:arrival_id]), {}, { class: "custom-select" } %>
+  <%= form.label :num_passengers, "Number of Passengers" %>
+  <%= form.select :num_passengers, options_for_select([1,2,3,4], params[:num_passengers]), {}, { class: "custom-select" } %>
+  <%= form.label :flight_date, "Arrival Date" %>
+  <%= form.select :flight_date, options_for_select(@flight_dates, params[:flight_date]), {}, { class: "custom-select" } %>
+  <%= form.submit "Search for flights", class: "btn btn-primary" %>
+<% end %>
+<%= form_with url: "/", method: :get do%>
+  <% @searched_flights.each do |f| %>
+    <%= render "flight_option", flight:f %>
+  <% end %>
+  <%= hidden_field_tag :num_passengers, params[:num_passengers] %>
+  <%= submit_tag "Choose Flight", class: "btn btn-primary" %>
+<% end %>
