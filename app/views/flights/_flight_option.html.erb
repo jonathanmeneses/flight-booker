@@ -1,4 +1,4 @@
 <div>
-  <%= radio_button_tag 'selected_flight', flight.id %>
-  <%= label_tag "selected_flight_#{flight.id}", "Flight ##{flight.id} from #{flight.departure_airport.code} to #{flight.arrival_airport.code}; Departs: #{format_flight_time(flight.depart_time)} on #{format_flight_date(flight.depart_date)}; Arrives: #{format_flight_time(flight.arrival_time)} on #{format_flight_date(flight.arrival_date)}" %>
+  <%= form.radio_button :selected_flight, flight.id %>
+  <%= form.label "selected_flight_#{flight.id}", "Flight ##{flight.id} from #{flight.departure_airport.code} to #{flight.arrival_airport.code}; Departs: #{format_flight_time(flight.depart_time)} on #{format_flight_date(flight.depart_date)}; Arrives: #{format_flight_time(flight.arrival_time)} on #{format_flight_date(flight.arrival_date)}" %>
 </div>

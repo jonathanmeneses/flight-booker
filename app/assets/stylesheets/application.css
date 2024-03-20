@@ -13,3 +13,65 @@
  *= require_tree .
  *= require_self
  */
+#messages div {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.notice {
+    background-color: #009688;
+    /* Teal */
+}
+
+.error {
+    background-color: #f44336;
+    /* Red */
+}
+
+.alert {
+    background-color: #ff9800;
+    /* Orange */
+}
+
+/* Style the field wrapper */
+.field_with_errors {
+    display: inline-block;
+    border: 2px solid #f44336;
+    /* Red border to highlight the field */
+    background-color: #ffebee;
+    /* Light red background */
+}
+
+/* Style the input fields within the .field_with_errors wrapper */
+.field_with_errors input,
+.field_with_errors select,
+.field_with_errors textarea {
+    border-color: #f44336;
+    /* Red border for the input itself */
+}
+
+/* Style the error messages */
+#error_explanation {
+    color: #f44336;
+    /* Red text for the error messages */
+    background-color: #ffebee;
+    /* Light red background */
+    border: 2px solid #f44336;
+    /* Red border around the error message box */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#error_explanation h2 {
+    text-align: left;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+#error_explanation ul li {
+    font-size: 1em;
+    list-style-type: none;
+    /* Remove list bullets */
+}
