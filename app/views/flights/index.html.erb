@@ -1,0 +1,24 @@
+<h1>Search for Flights</h1>
+<%= form_with url: flights_path, method: :get do |form| %>
+  <%= form.label :departure_id, "Departing Airport:" %>
+  <%= form.select :departure_id, options_for_select(@airport_options, params[:departure_id]), {}, { class: "custom-select" } %>
+  <%= form.label :arrival_id, "Arriving Airport:" %>
+  <%= form.select :arrival_id, options_for_select(@airport_options, params[:arrival_id]), {}, { class: "custom-select" } %>
+  <%= form.label :num_passengers, "Number of Passengers" %>
+  <%= form.select :num_passengers, options_for_select([1,2,3,4], params[:num_passengers]), {}, { class: "custom-select" } %>
+  <%= form.label :flight_date, "Arrival Date" %>
+  <%= form.select :flight_date, options_for_select(@flight_dates, params[:flight_date]), {}, { class: "custom-select" } %>
+  <%= form.submit "Search for flights", class: "btn btn-primary" %>
+<% end %>
+<%if @searched_flights.any? %>
+  <%= form_with url: new_booking_path, method: :get do |form|%>
+    <% @searched_flights.each do |f| %>
+      <div>
+        <%= form.radio_button :selected_flight, f.id %>
+        <%= form.label "selected_flight_#{f.id}", "Flight ##{f.id} from #{f.departure_airport.code} to #{f.arrival_airport.code}; Departs: #{format_flight_time(f.depart_time)} on #{format_flight_date(f.depart_date)}; Arrives: #{format_flight_time(f.arrival_time)} on #{format_flight_date(f.arrival_date)}" %>
+      </div>
+    <% end %>
+    <%= form.hidden_field :num_passengers, value: params[:num_passengers] %>
+    <%= form.submit "Choose Flight", class: "btn btn-primary" %>
+  <% end %>
+<%end %>

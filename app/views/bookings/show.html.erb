@@ -1,0 +1,10 @@
+<h1>Booking Details</h1>
+<h2>for flight <%=@booking.flight.id%></h2>
+<h3>From: <%=@booking.flight.departure_airport.name%> at <%=format_flight_time @booking.flight.depart_time%> on <%=format_flight_date @booking.flight.depart_date%></h3>
+<h3>To: <%=@booking.flight.arrival_airport.name%> at <%=format_flight_time @booking.flight.arrival_time%> on <%=format_flight_date @booking.flight.arrival_date%></h3>
+<% @booking.passengers.each_with_index do |passenger,index|%>
+  <div>
+    <h1>Passenger <%=index + 1 %></h1>
+    <p>Name: <%=passenger.name%></p>
+  </div>
+<%end%>

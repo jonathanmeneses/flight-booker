@@ -1,0 +1,11 @@
+<h1>All Bookings</h1>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <%= link_to booking_path(booking) do %>
+        flight <%= booking.flight.id %> from <%= booking.flight.departure_airport.code %> to from <%= booking.flight.arrival_airport.code %> for <%=booking.passengers.count%> passengers
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Home", root_path %>
