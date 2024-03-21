@@ -2,7 +2,7 @@
 
 # Overview
 
-This is a flight booker mock[project](https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker) as part of [The Odin Project](https://www.theodinproject.com)'s Ruby on Rails pathway. 
+This is a flight booker mock [project](https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker) as part of [The Odin Project](https://www.theodinproject.com)'s Ruby on Rails pathway. 
 
 # Intent
 The intent of this project is to develop my learning and showcase:
@@ -12,7 +12,6 @@ The intent of this project is to develop my learning and showcase:
 1. Ability to model complex data relationships
 2. Ability to implement Active Record associations
 3. Ability to standup functional Rails apps
-4. Continued mastery of authentication and authorization concepts with the [devise gem](https://github.com/heartcombo/devise)
 
 # Caveats
 
