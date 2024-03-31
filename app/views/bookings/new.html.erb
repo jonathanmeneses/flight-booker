@@ -11,21 +11,24 @@
 <div data-controller = "booking">
   <%= form_with model: @booking do |booking_form| %>
     <%= booking_form.hidden_field :flight_id, value: @flight.id %>
-    <div data-booking-target = "passengers">
+    <div class= "passengers">
       <% @booking.passengers.each_with_index do |passenger, n| %>
-        <h1>Passenger <%= n + 1 %> Details</h1>
-        <%= booking_form.fields_for :passengers, passenger do |passenger_info_form| %>
-          <%= passenger_info_form.label :name, "Name" %>
-          <%= passenger_info_form.text_field :name %>
-          <%= passenger_info_form.label :email, "Email" %>
-          <%= passenger_info_form.text_field :email %>
-        <% end %>
+        <div data-booking-target = "passenger" class="passenger-fields">
+          <h1>Passenger <%= n + 1 %> Details</h1>
+          <%= booking_form.fields_for :passengers, passenger do |passenger_info_form| %>
+            <%= passenger_info_form.label :name, "Name" %>
+            <%= passenger_info_form.text_field :name %>
+            <%= passenger_info_form.label :email, "Email" %>
+            <%= passenger_info_form.text_field :email %>
+            <% unless n == 0 %>
+              <%= passenger_info_form.button "Remove Passenger", data: { action: "click->booking#removePassenger" } %>
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
     <br>
+    <button data-action = "click->booking#addPassenger"> Add passenger </button>
     <%= booking_form.submit "Book Flights" %>
   <% end %>
 </div>
-<template id="productrow">
-  <h1>Hello World</h1>
-</template>
