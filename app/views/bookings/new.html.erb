@@ -8,17 +8,24 @@
     </ul>
   </div>
 <% end %>
-<%= form_with model: @booking do |booking_form| %>
-  <%= booking_form.hidden_field :flight_id, value: @flight.id %>
-  <% @booking.passengers.each_with_index do |passenger, n| %>
-    <h1>Passenger <%= n + 1 %> Details</h1>
-    <%= booking_form.fields_for :passengers, passenger do |passenger_info_form| %>
-      <%= passenger_info_form.label :name, "Name" %>
-      <%= passenger_info_form.text_field :name %>
-      <%= passenger_info_form.label :email, "Email" %>
-      <%= passenger_info_form.text_field :email %>
-    <% end %>
+<div data-controller = "booking">
+  <%= form_with model: @booking do |booking_form| %>
+    <%= booking_form.hidden_field :flight_id, value: @flight.id %>
+    <div data-booking-target = "passengers">
+      <% @booking.passengers.each_with_index do |passenger, n| %>
+        <h1>Passenger <%= n + 1 %> Details</h1>
+        <%= booking_form.fields_for :passengers, passenger do |passenger_info_form| %>
+          <%= passenger_info_form.label :name, "Name" %>
+          <%= passenger_info_form.text_field :name %>
+          <%= passenger_info_form.label :email, "Email" %>
+          <%= passenger_info_form.text_field :email %>
+        <% end %>
+      <% end %>
+    </div>
+    <br>
+    <%= booking_form.submit "Book Flights" %>
   <% end %>
-  <br>
-  <%= booking_form.submit "Book Flights" %>
-<% end %>
+</div>
+<template id="productrow">
+  <h1>Hello World</h1>
+</template>
