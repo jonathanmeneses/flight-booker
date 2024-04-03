@@ -1,0 +1,12 @@
+Booking Confirmation
+Dear <%= @passenger.name %>,
+Thank you for booking a flight with our website. Your booking has been confirmed.
+Flight details:
+- Flight number: <%= @booking.flight_id %>
+- Departure: <%= @booking.flight.departure_airport.name %>
+- Destination: <%= @booking.flight.arrival_airport.name %>
+- Date: <%= @booking.flight.depart_date %>
+- Time: <%= @booking.flight.depart_time %>
+Please keep this email for your records.
+Best regards,
+The Team

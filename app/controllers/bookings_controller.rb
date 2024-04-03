@@ -10,6 +10,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
 
     if @booking.save
+      @booking.passengers.each do |p|
+        puts 'starting do loop'
+        PassengerMailer.with(passenger: p, booking: @booking).booking_confirm_email.deliver_now
+      end
       redirect_to booking_path(@booking), notice: 'Booking Successfully Created'
     else
       # Since save failed, no need to rebuild passengers; they are already built and contain errors if any.

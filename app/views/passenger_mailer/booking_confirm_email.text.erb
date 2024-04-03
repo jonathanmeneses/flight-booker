@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmation</title>
+  </head>
+  <body>
+    <h1>Booking Confirmation</h1>
+    <p>Dear <%= @passenger.name %>,</p>
+    <p>Thank you for booking a flight with our website. Your booking has been confirmed.</p>
+    <p>Flight details:</p>
+    <ul>
+      <li>Flight number: <%= @booking.flight_id %></li>
+      <li>Departure: <%= @booking.flight.departure_airport %></li>
+      <li>Destination: <%= @booking.flight.arrival_airport %></li>
+      <li>Date: <%= @booking.flight.depart_date %></li>
+      <li>Time: <%= @booking.flight.depart_time %></li>
+    </ul>
+    <p>Please keep this email for your records.</p>
+    <p>Best regards,</p>
+    <p>The Team</p>
+  </body>
+</html>
