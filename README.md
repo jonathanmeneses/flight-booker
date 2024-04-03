@@ -24,9 +24,9 @@ The intent of this project is to develop my learning and showcase:
 * I am only displaying e-mail confirmations using letter_opener in development environments, I am not currently deploying and sending e-mails using a tool like Sendgrid
 
 # Future work
-[ ] Bootstrap styling integration
-[ ] Deployment to a hosting site
-[ ] Live e-mail sends
+* [ ] Bootstrap styling integration
+* [ ] Deployment to a hosting site
+* [ ] Live e-mail sends
 
 # Contact me
 Thank you for viewing this project. If you'd like to learn more about The Odin Project or my learning journey, feel free to [email me](mailto:jonathan.m.meneses@gmail.com?subject=Private%20Events%20Project), [follow me on github](https://github.com/jonathanmeneses), or [connect with me on LinkedIn](https://www.linkedin.com/in/jonathan-m-meneses/). 
